@@ -1,10 +1,10 @@
 
-import React, { useState, useEffect, useMemo } from 'react';
-import { Category, Article } from './types';
-import { ARTICLES_DATA, EDITORIAL_TEAM, UI_STRINGS } from './constants';
-import ArticleCard from './components/ArticleCard';
-import ArticleView from './components/ArticleView';
-import CookieBanner from './components/CookieBanner';
+import React, { useState, useEffect } from 'react';
+import { Category, Article } from './types.ts';
+import { ARTICLES_DATA, EDITORIAL_TEAM, UI_STRINGS } from './constants.tsx';
+import ArticleCard from './components/ArticleCard.tsx';
+import ArticleView from './components/ArticleView.tsx';
+import CookieBanner from './components/CookieBanner.tsx';
 
 type Page = 'home' | 'about' | 'news';
 
@@ -32,7 +32,6 @@ const App: React.FC = () => {
 
   const renderHome = () => (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      {/* Featured Main Section */}
       <div className="lg:col-span-8 space-y-12">
         <div 
           className="group cursor-pointer border-b-4 border-slate-900 dark:border-slate-100 pb-12"
@@ -66,9 +65,7 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* Sidebar */}
       <div className="lg:col-span-4 space-y-16">
-        {/* Newsletter / Meta */}
         <div className="bg-slate-100 dark:bg-slate-900 p-8 rounded-sm">
           <h4 className="font-serif text-2xl mb-4 dark:text-white">{t.subscribe}</h4>
           <p className="text-sm text-slate-500 mb-6">{t.footerText}</p>
@@ -80,7 +77,6 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Citizen Journalism */}
         <div className="border-t-2 border-brand-accent pt-8">
           <h4 className="font-serif text-2xl mb-4 dark:text-white italic">{t.citizenJournalism}</h4>
           <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
@@ -91,7 +87,6 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        {/* Trending */}
         <div className="space-y-6">
           <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">{t.trending}</h4>
           {ARTICLES_DATA.map((a, i) => (
@@ -146,7 +141,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#121212] transition-colors duration-500">
-      {/* Top Meta Header */}
       <div className="border-b border-slate-100 dark:border-slate-900 bg-slate-50 dark:bg-black py-2 px-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
@@ -165,7 +159,6 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Brand Header */}
       <header className="py-12 px-6 border-b border-slate-900 dark:border-slate-100 mx-6 mb-8">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <h1 
@@ -178,7 +171,6 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Navigation */}
       <nav className="mb-12 px-6">
         <div className="max-w-7xl mx-auto border-b border-slate-100 dark:border-slate-900 pb-4">
           <ul className="flex justify-center gap-12">
@@ -212,7 +204,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      {/* Modern Light Footer */}
       <footer className="mt-32 py-20 px-6 border-t border-slate-100 dark:border-slate-900">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">

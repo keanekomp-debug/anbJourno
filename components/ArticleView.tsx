@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Article } from '../types';
-import { UI_STRINGS } from '../constants';
+import { Article } from '../types.ts';
+import { UI_STRINGS } from '../constants.tsx';
 
 interface ArticleViewProps {
   article: Article;
